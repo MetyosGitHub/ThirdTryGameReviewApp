@@ -9,7 +9,7 @@ using ThirdTryGameReviewApp.Data;
 
 namespace ThirdTryGameReviewApp.Data.Migrations
 {
-    [DbContext(typeof(ApplicationDbContext))]
+    [DbContext(typeof(GameReviewDbContext))]
     [Migration("00000000000000_CreateIdentitySchema")]
     partial class CreateIdentitySchema
     {

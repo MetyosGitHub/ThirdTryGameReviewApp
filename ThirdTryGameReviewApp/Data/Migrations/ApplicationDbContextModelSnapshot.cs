@@ -8,7 +8,7 @@ using ThirdTryGameReviewApp.Data;
 
 namespace ThirdTryGameReviewApp.Data.Migrations
 {
-    [DbContext(typeof(ApplicationDbContext))]
+    [DbContext(typeof(GameReviewDbContext))]
     partial class ApplicationDbContextModelSnapshot : ModelSnapshot
     {
         protected override void BuildModel(ModelBuilder modelBuilder)

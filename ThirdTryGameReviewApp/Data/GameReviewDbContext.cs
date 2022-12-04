@@ -1,11 +1,12 @@
 ﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
+using ThirdTryGameReviewApp.Data.Entities;
 
 namespace ThirdTryGameReviewApp.Data
 {
-    public class ApplicationDbContext : IdentityDbContext
+    public class GameReviewDbContext : IdentityDbContext<User>
     {
-        public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
+        public GameReviewDbContext(DbContextOptions<GameReviewDbContext> options)
             : base(options)
         {
         }
