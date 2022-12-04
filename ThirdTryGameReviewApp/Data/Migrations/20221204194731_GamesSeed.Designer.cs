@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using ThirdTryGameReviewApp.Data;
 
@@ -11,9 +12,10 @@ using ThirdTryGameReviewApp.Data;
 namespace ThirdTryGameReviewApp.Data.Migrations
 {
     [DbContext(typeof(GameReviewDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20221204194731_GamesSeed")]
+    partial class GamesSeed
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -358,16 +360,6 @@ namespace ThirdTryGameReviewApp.Data.Migrations
                     b.HasIndex("GameId");
 
                     b.ToTable("Reviews");
-
-                    b.HasData(
-                        new
-                        {
-                            Id = 1,
-                            Description = "I expected great action from God of War, and it delivers that handily. But I didn’t expect it to be a thrilling journey in which every aspect of it complements the others to form what is nothing short of a masterpiece. It’s a game in which Kratos, a previously one-note character, becomes a complex father, warrior, and monster, embattled both on the field and within his own heart about how to treat his son; one in which the world opens up and shifts, offering rewards in both gameplay and knowledge of its lore that I treasured with each accomplishment. The obvious care that went into crafting its world, characters, and gameplay delivers by far the most stirring and memorable game in the series.",
-                            GameId = 1,
-                            Score = 10m,
-                            Title = "God of War a true masterpiece"
-                        });
                 });
 
             modelBuilder.Entity("ThirdTryGameReviewApp.Data.Entities.User", b =>

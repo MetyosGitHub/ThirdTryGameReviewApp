@@ -18,5 +18,136 @@ namespace ThirdTryGameReviewApp.Data
         public DbSet<Publisher> Publishers { get; set; }
 
         public DbSet<Review> Reviews { get; set; }
+
+        protected override void OnModelCreating(ModelBuilder builder)
+        {
+            builder.Entity<User>()
+                .Property(u => u.UserName)
+                .HasMaxLength(25)
+                .IsRequired();
+            builder.Entity<User>()
+               .Property(u => u.Email)
+               .HasMaxLength(65)
+               .IsRequired();
+            builder
+                .Entity<Genre>()
+                .HasData(new Genre()
+                {
+                    Id = 1,
+                    Name = "Action",
+                },
+                new Genre()
+                {
+                    Id = 2,
+                    Name = "Strategy"
+                },
+                new Genre()
+                {
+                    Id = 3,
+                    Name = "MOBA"
+                },
+                new Genre()
+                {
+                    Id = 4,
+                    Name = "First Person Shooter"
+                },
+                new Genre()
+                {
+                    Id = 5,
+                    Name = "Puzzle"
+                });
+            builder.Entity<Publisher>()
+                .HasData(new Publisher()
+                {
+                    Id = 1,
+                    Name = "Santa Monica Studio"
+                },
+                new Publisher()
+                {
+                    Id = 2,
+                    Name = "Sid Meier"
+                },
+                new Publisher()
+                {
+                    Id = 3,
+                    Name = "Riot Games"
+                },
+                new Publisher()
+                {
+                    Id = 4,
+                    Name = "Treyarch"
+                },
+                new Publisher()
+                {
+                    Id = 5,
+                    Name = "TG Studios"
+                });
+            builder.Entity<Game>()
+                .HasData(new Game()
+                {
+                    Id = 1,
+                    Name = "God Of War",
+                    Description = "After destroying the Greek Pantheon Kratos is trying to teach his son how to not make the same mistakes again.",
+                    YearOfCreation = 2018,
+                    GenreId = 1,
+                    PublisherId = 1,
+
+                },
+                new Game()
+                {
+                    Id = 2,
+                    Name = "Civilization 6",
+                    Description = "Play as one of Earth's most famous leaders on their quest to build the greatest country there is and will be.",
+                    YearOfCreation = 2016,
+                    GenreId = 2,
+                    PublisherId = 2,
+
+                },
+                 new Game()
+                 {
+                     Id = 3,
+                     Name = "League Of Legends",
+                     Description = "A team-based competitive game mode based on strategy and outplaying opponents. Players work with their team to break the enemy Nexus before the enemy team breaks theirs.",
+                     YearOfCreation = 2009,
+                     GenreId = 3,
+                     PublisherId = 3,
+
+                 },
+                  new Game()
+                  {
+                      Id = 4,
+                      Name = "Call Of Duty Modern Warfare 2",
+                      Description = "A sequel to the 2019 reboot, and serves as the nineteenth installment in the overall Call of Duty series.",
+                      YearOfCreation = 2022,
+                      GenreId = 4,
+                      PublisherId = 4,
+
+                  },
+                   new Game()
+                   {
+                       Id = 5,
+                       Name = "Time Enigma",
+                       Description = "A mobile game where you play as a detective who investigates the death of his cat in order to go back in time and prevent it from happening.",
+                       YearOfCreation = 2020,
+                       GenreId = 5,
+                       PublisherId = 5,
+
+                   });
+            builder.Entity<Review>()
+                .HasData(new Review()
+                {
+                    Id = 1,
+                    GameId = 1,
+                    Title = "God of War a true masterpiece",
+                    Description = "I expected great action from God of War, and it delivers that handily. But I didn’t expect it to be a thrilling journey in which every aspect of it complements the others to form what is nothing short of a masterpiece. It’s a game in which Kratos, a previously one-note character, becomes a complex father, warrior, and monster, embattled both on the field and within his own heart about how to treat his son; one in which the world opens up and shifts, offering rewards in both gameplay and knowledge of its lore that I treasured with each accomplishment. The obvious care that went into crafting its world, characters, and gameplay delivers by far the most stirring and memorable game in the series.",
+                    Score = 10,
+
+                });
+
+
+
+
+            base.OnModelCreating(builder);
+        }
     }
 }

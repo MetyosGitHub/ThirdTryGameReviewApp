@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using ThirdTryGameReviewApp.Data;
 
@@ -11,9 +12,10 @@ using ThirdTryGameReviewApp.Data;
 namespace ThirdTryGameReviewApp.Data.Migrations
 {
     [DbContext(typeof(GameReviewDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20221204193824_GameOneSeedTry")]
+    partial class GameOneSeedTry
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -204,42 +206,6 @@ namespace ThirdTryGameReviewApp.Data.Migrations
                             Name = "God Of War",
                             PublisherId = 1,
                             YearOfCreation = 2018
-                        },
-                        new
-                        {
-                            Id = 2,
-                            Description = "Play as one of Earth's most famous leaders on their quest to build the greatest country there is and will be.",
-                            GenreId = 2,
-                            Name = "Civilization 6",
-                            PublisherId = 2,
-                            YearOfCreation = 2016
-                        },
-                        new
-                        {
-                            Id = 3,
-                            Description = "A team-based competitive game mode based on strategy and outplaying opponents. Players work with their team to break the enemy Nexus before the enemy team breaks theirs.",
-                            GenreId = 3,
-                            Name = "League Of Legends",
-                            PublisherId = 3,
-                            YearOfCreation = 2009
-                        },
-                        new
-                        {
-                            Id = 4,
-                            Description = "A sequel to the 2019 reboot, and serves as the nineteenth installment in the overall Call of Duty series.",
-                            GenreId = 4,
-                            Name = "Call Of Duty Modern Warfare 2",
-                            PublisherId = 4,
-                            YearOfCreation = 2022
-                        },
-                        new
-                        {
-                            Id = 5,
-                            Description = "A mobile game where you play as a detective who investigates the death of his cat in order to go back in time and prevent it from happening.",
-                            GenreId = 5,
-                            Name = "Time Enigma",
-                            PublisherId = 5,
-                            YearOfCreation = 2020
                         });
                 });
 
@@ -358,16 +324,6 @@ namespace ThirdTryGameReviewApp.Data.Migrations
                     b.HasIndex("GameId");
 
                     b.ToTable("Reviews");
-
-                    b.HasData(
-                        new
-                        {
-                            Id = 1,
-                            Description = "I expected great action from God of War, and it delivers that handily. But I didn’t expect it to be a thrilling journey in which every aspect of it complements the others to form what is nothing short of a masterpiece. It’s a game in which Kratos, a previously one-note character, becomes a complex father, warrior, and monster, embattled both on the field and within his own heart about how to treat his son; one in which the world opens up and shifts, offering rewards in both gameplay and knowledge of its lore that I treasured with each accomplishment. The obvious care that went into crafting its world, characters, and gameplay delivers by far the most stirring and memorable game in the series.",
-                            GameId = 1,
-                            Score = 10m,
-                            Title = "God of War a true masterpiece"
-                        });
                 });
 
             modelBuilder.Entity("ThirdTryGameReviewApp.Data.Entities.User", b =>
