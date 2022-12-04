@@ -17,7 +17,7 @@ namespace ThirdTryGameReviewApp.Data.Entities
         [Required]
         public int GameId { get; set; }
         [Required]
-        [ForeignKey(nameof(GameId)]
+        [ForeignKey(nameof(GameId))]
         public Game Game { get; set; }
     }
 }
