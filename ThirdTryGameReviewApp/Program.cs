@@ -11,8 +11,16 @@ builder.Services.AddDbContext<GameReviewDbContext>(options =>
     options.UseSqlServer(connectionString));
 builder.Services.AddDatabaseDeveloperPageExceptionFilter();
 
-builder.Services.AddDefaultIdentity<User>(options => options.SignIn.RequireConfirmedAccount = true)
+builder.Services.AddDefaultIdentity<User>(options => 
+{ 
+    options.SignIn.RequireConfirmedAccount = true;
+    options.Password.RequireNonAlphanumeric = false;
+    options.Password.RequireLowercase = false;
+    options.Password.RequireUppercase = false;
+})
+    
     .AddEntityFrameworkStores<GameReviewDbContext>();
+
 builder.Services.AddControllersWithViews();
 
 var app = builder.Build();

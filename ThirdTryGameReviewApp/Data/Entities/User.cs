@@ -8,7 +8,7 @@ namespace ThirdTryGameReviewApp.Data.Entities
     {
         [Required]
         [MaxLength(25), MinLength(3)]
-        public string Name { get; set; }
+        public string Name { get; set; } = null!;
 
 
     }
