@@ -1,7 +1,9 @@
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
+using ThirdTryGameReviewApp.Contracts;
 using ThirdTryGameReviewApp.Data;
 using ThirdTryGameReviewApp.Data.Entities;
+using ThirdTryGameReviewApp.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -13,7 +15,7 @@ builder.Services.AddDatabaseDeveloperPageExceptionFilter();
 
 builder.Services.AddDefaultIdentity<User>(options => 
 { 
-    options.SignIn.RequireConfirmedAccount = true;
+    options.SignIn.RequireConfirmedAccount = false;
     options.Password.RequireNonAlphanumeric = false;
     options.Password.RequireLowercase = false;
     options.Password.RequireUppercase = false;
@@ -22,6 +24,7 @@ builder.Services.AddDefaultIdentity<User>(options =>
     .AddEntityFrameworkStores<GameReviewDbContext>();
 
 builder.Services.AddControllersWithViews();
+builder.Services.AddScoped<IGameService, GameService>();
 
 var app = builder.Build();
 

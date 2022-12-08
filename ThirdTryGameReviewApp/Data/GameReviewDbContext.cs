@@ -91,6 +91,7 @@ namespace ThirdTryGameReviewApp.Data
                     YearOfCreation = 2018,
                     GenreId = 1,
                     PublisherId = 1,
+                    PictureURL = "https://cdn1.epicgames.com/offer/3ddd6a590da64e3686042d108968a6b2/EGS_GodofWar_SantaMonicaStudio_S2_1200x1600-fbdf3cbc2980749091d52751ffabb7b7_1200x1600-fbdf3cbc2980749091d52751ffabb7b7",
 
                 },
                 new Game()
@@ -101,7 +102,7 @@ namespace ThirdTryGameReviewApp.Data
                     YearOfCreation = 2016,
                     GenreId = 2,
                     PublisherId = 2,
-
+                    PictureURL = "https://cdn1.epicgames.com/cd14dcaa4f3443f19f7169a980559c62/offer/EGS_SidMeiersCivilizationVI_FiraxisGames_S1-2560x1440-2fcd1c150ac6d8cdc672ae042d2dd179.jpg",
                 },
                  new Game()
                  {
@@ -111,6 +112,8 @@ namespace ThirdTryGameReviewApp.Data
                      YearOfCreation = 2009,
                      GenreId = 3,
                      PublisherId = 3,
+                     PictureURL = "https://cdn1.epicgames.com/salesEvent/salesEvent/EGS_LeagueofLegends_RiotGames_S2_1200x1600-7fd64f0f7b674900bdd172967865d545",
+
 
                  },
                   new Game()
@@ -121,7 +124,7 @@ namespace ThirdTryGameReviewApp.Data
                       YearOfCreation = 2022,
                       GenreId = 4,
                       PublisherId = 4,
-
+                      PictureURL = "https://assets-prd.ignimgs.com/2022/05/24/call-of-duty-modern-warfare-2-button-02-1653417394041.jpg",
                   },
                    new Game()
                    {
@@ -131,7 +134,8 @@ namespace ThirdTryGameReviewApp.Data
                        YearOfCreation = 2020,
                        GenreId = 5,
                        PublisherId = 5,
-
+                       
+                       PictureURL = "https://img.itch.zone/aW1nLzM2MDk2NDcucG5n/original/xat20B.png",
                    });
             builder.Entity<Review>()
                 .HasData(new Review()

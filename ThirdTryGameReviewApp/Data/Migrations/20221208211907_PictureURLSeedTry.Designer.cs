@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using ThirdTryGameReviewApp.Data;
 
@@ -11,9 +12,10 @@ using ThirdTryGameReviewApp.Data;
 namespace ThirdTryGameReviewApp.Data.Migrations
 {
     [DbContext(typeof(GameReviewDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20221208211907_PictureURLSeedTry")]
+    partial class PictureURLSeedTry
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -222,7 +224,6 @@ namespace ThirdTryGameReviewApp.Data.Migrations
                             Description = "A team-based competitive game mode based on strategy and outplaying opponents. Players work with their team to break the enemy Nexus before the enemy team breaks theirs.",
                             GenreId = 3,
                             Name = "League Of Legends",
-                            PictureURL = "https://cdn1.epicgames.com/salesEvent/salesEvent/EGS_LeagueofLegends_RiotGames_S2_1200x1600-7fd64f0f7b674900bdd172967865d545",
                             PublisherId = 3,
                             YearOfCreation = 2009
                         },
@@ -232,7 +233,6 @@ namespace ThirdTryGameReviewApp.Data.Migrations
                             Description = "A sequel to the 2019 reboot, and serves as the nineteenth installment in the overall Call of Duty series.",
                             GenreId = 4,
                             Name = "Call Of Duty Modern Warfare 2",
-                            PictureURL = "https://assets-prd.ignimgs.com/2022/05/24/call-of-duty-modern-warfare-2-button-02-1653417394041.jpg",
                             PublisherId = 4,
                             YearOfCreation = 2022
                         },
@@ -242,7 +242,6 @@ namespace ThirdTryGameReviewApp.Data.Migrations
                             Description = "A mobile game where you play as a detective who investigates the death of his cat in order to go back in time and prevent it from happening.",
                             GenreId = 5,
                             Name = "Time Enigma",
-                            PictureURL = "https://img.itch.zone/aW1nLzM2MDk2NDcucG5n/original/xat20B.png",
                             PublisherId = 5,
                             YearOfCreation = 2020
                         });
