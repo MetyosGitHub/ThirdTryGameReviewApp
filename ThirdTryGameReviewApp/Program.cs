@@ -24,7 +24,9 @@ builder.Services.AddDefaultIdentity<User>(options =>
     .AddEntityFrameworkStores<GameReviewDbContext>();
 
 builder.Services.AddControllersWithViews();
+builder.Services.AddRazorPages();
 builder.Services.AddScoped<IGameService, GameService>();
+
 
 var app = builder.Build();
 

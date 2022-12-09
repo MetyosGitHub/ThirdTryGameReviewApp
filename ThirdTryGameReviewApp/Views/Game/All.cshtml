@@ -1,22 +1,27 @@
 ﻿@model IEnumerable<GameListViewModel>
+@{
+	ViewBag.Title = "Games";
+}
 
-	@{
-		ViewBag.Title = "Games";
-	}
-
-	@*<div class="text-center row">
+<div class="text-center row">
 	@foreach(var game in Model)
 	{
-		<div class="card col-4" style="width: 20rem;">
-			<img class="card-img-left" style="width: 18rem;"
-			src="@game.PictureURL" >
+		<tr>
+			<div class="card col-4" style="width: 20rem;">
+			<img class="card-img-left" style="width: 18rem;" src="@game.PictureURL" >
 			<div class="card-body">
 				<h5 class="card-title mt-1">@game.Name</h5>
-				<partial class="mb-0">Year of creation: @game.YearOfCreation</partial>
+				<partial class="mb-0">Year of creation:@game.YearOfCreation</partial>
 			</div>
+		</tr>
 	}
-	</div>
-		*@
+</div>
+	
+
+
+	
+	
+		
 
 
 	

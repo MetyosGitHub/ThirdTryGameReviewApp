@@ -7,11 +7,11 @@ namespace ThirdTryGameReviewApp.Models
         public int Id { get; set; }
 
         [Required]
-        public string Name { get; set; }
+        public string Name { get; set; } = null!;
         [Required]
         public int YearOfCreation { get; set; }
         [Required]
-        public string PictureURL { get; set; }
+        public string PictureURL { get; set; } = null!;
         
         
     }
